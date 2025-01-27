@@ -1,0 +1,17 @@
+{
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@docusaurus/tsconfig",
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "target": "ESNext", // Target the latest ECMAScript version
+    "resolveJsonModule": true, // Allow JSON imports
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true
+  }
+}

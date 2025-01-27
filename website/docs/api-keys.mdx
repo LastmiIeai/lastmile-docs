@@ -1,0 +1,69 @@
+---
+id: api-keys
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import constants from "@site/core/tabConstants";
+
+# Manage API keys
+
+Get your LastMile API key
+
+- Log in or sign up for free at https://lastmileai.dev
+- Navigate to [API Keys console](https://lastmileai.dev/apikeys)
+- Click `+ New Key`
+
+![LastMile API Key](/img/lastmile-api-key.png)
+
+Export the API key you generated as an environment variable. Alternatively, you can also pass it directly into the `Lastmile` client.
+
+<Tabs groupId="first-api-request">
+<TabItem value="bash">
+  
+  ```bash
+export LASTMILE_API_TOKEN="your_api_key"
+```
+
+</TabItem>
+<TabItem value="python">
+  
+  ```python
+from lastmile import Lastmile
+from lastmile.lib.auto_eval import AutoEval
+
+# Recommended: AutoEval client SDK (higher-level APIs)
+client = AutoEval(api_token="api_token_if_LASTMILE_API_TOKEN_not_set")
+
+# Lastmile client (REST API wrappers)
+client = Lastmile(
+    bearer_token="api_token_if_LASTMILE_API_TOKEN_not_set",
+)
+```
+
+</TabItem>
+<TabItem value="node.js">
+  
+  ```typescript
+import { Lastmile } from 'lastmile';
+import { AutoEval } from "lastmile/lib/auto_eval";
+
+// Recommended: AutoEval client SDK (higher-level APIs)
+const client = new AutoEval({
+    apiKey: "api_token_if_LASTMILE_API_TOKEN_not_set" 
+});
+
+// Lastmile client (REST API wrappers)
+const restClient = new Lastmile({
+    bearerToken: "api_token_if_LASTMILE_API_TOKEN_not_set",
+});
+```
+
+</TabItem>
+</Tabs>
+
+### Configure Weights & Biases API token
+
+AutoEval allows you to track detailed training runs in your own Weights & Biases account. To do so, navigate to the [API Keys console](https://lastmileai.dev/apikeys), and save your W&B API key.
+Subsequent [fine-tuning](/autoeval/fine-tune) runs will be tracked in your account.
+![Wandb Integration](/img/api/wandb.png)

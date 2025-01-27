@@ -1,0 +1,41 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/.next": true,
+    "**/.sl": true,
+    "yarn.lock": true
+  },
+  "editor.formatOnSave": true,
+  "prettier.disableLanguages": ["mdx"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[markdown_latex_combined]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  }
+}

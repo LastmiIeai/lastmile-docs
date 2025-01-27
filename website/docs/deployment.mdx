@@ -1,0 +1,36 @@
+---
+id: deployment
+title: VPC Deployment
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import constants from '@site/core/tabConstants';
+
+# Deployment Options
+
+Hosting options for the AutoEval platform
+
+The AutoEval platform is available as a single-tenant hosted service from https://lastmileai.dev. It is free to get started, [run evals](/autoeval/models), generate labels with [LLM Judge](/autoeval/labeling), [fine-tune](/autoeval/fine-tune) custom metrics and create [guardrails](/autoeval/guardrails).
+
+For customers needing more control over the platform data plane or control plane, often for added security and privacy guarantees, we offer VPC deployments on any cloud provider.
+
+![AutoEval Deployment](/img/deployment.png)
+
+:::info
+AutoEval is already in use at several Fortune 500 enterprises, and can be deployed within enterprise VPCs on AWS, Azure, GCP, and even on-prem.
+Please contact [sales@lastmileai.dev](mailto:sales@lastmileai.dev) to get in touch.
+:::
+
+### Service Architecture
+LastMile AI provides deployable containers (OCI) that can be hosted on your private cloud through [Docker](https://www.docker.com/), [Podman](https://podman.io/), or any other OCI certified service. 
+
+Here is the AWS service architecture for the AutoEval platform. Similar deployments are available for Azure and Google Cloud.
+![AutoEval Architecture](/img/architecture_diagram.png)
+
+#### Hybrid Deployments
+In certain cases, you may want to have more fine-grained deployments (e.g. use the hosted platform for fine-tuning, but deploy the models and inference server in VPC).
+This hybrid deployment is also available, and depends on which part of the control or data plane you need control over.
+
+### Get Started with VPC Deployments
+If you are interested in hosting AutoEval and alBERTa models within your private cloud, please contact [sales@lastmileai.dev](mailto:sales@lastmileai.dev).

@@ -1,0 +1,66 @@
+---
+title: "AutoEval Developer Platform"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import constants from "@site/core/tabConstants";
+
+# AutoEval
+
+Platform Overview
+
+The AutoEval fine-tuning platform enables the customization of [alBERTa small language models](/autoeval/models) (SLMs) to better evaluate and measure your application's performance.
+
+It solves a key problem in generative AI application development -- helping you develop metrics that accurately represent your application's performance, enabling you to
+iteratively drive improvements and have confidence in production.
+
+Here's how it works:
+
+![autoeval-flow](/img/autoeval_flow.png)
+
+You come to AutoEval if you have a compound AI application, such as a RAG pipeline or agent system, and you want to understand if the application is performing well or not.
+This can be a single quality metric of AI interactions, or a whole suite of metrics - each measuring something specific about the system:
+* _Is the response faithful to the data provided?_
+* _Is the input relevant to the application's purpose? (input guardrail)_
+* _Does the response adhere to my company's brand tone?_
+
+AutoEval starts from the application's trace [datasets](/autoeval/datasets), [labels](/autoeval/labeling) the interactions using LLM Judge where you can specify an evaluation criteria in natural language (prompt),
+and then [fine-tunes](/autoeval/fine-tune) an alBERTa SLM to learn the distribution of those labeled interactions. You can then [run the fine-tuned model](/autoeval/models#usage-guide)
+as an eval, or at runtime as a [guardrail](/autoeval/guardrails). For e.g. if a response is deemed to have hallucinated, i.e. unsufficiently faithful to the data, then deny that response from reaching the user.
+
+## Platform Capabilities
+
+![autoeval-platform](https://andrew-dev-s3.s3.amazonaws.com/autoeval-platform.png)
+
+### Out-of-the-box metrics
+Key metrics to evaluate typical AI applications (such as RAG) are available out of the box. Detect hallucinations, measure input/context relevance, score summarizations and more.
+[Learn more](/autoeval/metrics)
+
+### Dataset Management
+Store application trace data in AutoEval to be used for running evals, for labeling, and for fine-tuning evaluator models.
+[Learn more](/autoeval/datasets)
+
+### Synthetic Labeling (LLM Judge Labeling)
+
+For use cases that have few to no labels or ground truth data, AutoEval provides the capability to synthetically generate labels.
+We refer to this as **Synthetic Labeling**. It uses an LLM to generate labels given a custom evaluation criteria, and also allows a 
+developer to improve the labels manually as part of an refinement process (typically labeled by a subject matter expert).
+
+You can continuously improve the label quality by providing additional samples of ground truth data.
+
+[Learn more](/autoeval/labeling)
+
+
+### Fine-tuning
+**Design your own eval metric**. Fine-tuning allows you to improve the performance of LastMile AI's models by tuning the performance to your specific data and use case. 
+
+[Learn more](/autoeval/fine-tune)
+
+### Online inference
+You can use the evaluator models for offline tasks such as [running evals](/autoeval/models#usage-guide), as well as online tasks such as [guardrails](/autoeval/guardrails).
+AutoEval has a high-performance inference server that can handle both kinds of workloads.
+
+:::info
+Use the [quickstart](/quickstart) guide to get started running your first evaluation.
+:::
